@@ -1,26 +1,31 @@
 from tkinter import *
 
-# from tkinter import ttk as ttk
-
 root = Tk()
 root.title("Project_Euler")
-root.geometry("400x400")
+root.geometry("1024x768")
 
-Task_1_Name = "Задача 1. Числа, кратные 3 или 5"
+Base_Panel = Frame(root, bg='azure2', bd=5)
+Base_Panel.pack(fill=BOTH, expand=True)
 
-Title_Task = Label(root, text=Task_1_Name, background="#555", foreground="#ccc", padx="15", pady="6", font="15")
-Title_Task.pack(expand=False, fill=X)
+Button_Panel = Frame(Base_Panel, bg='azure2', bd=5)
+Button_Panel.pack(side=LEFT, fill=BOTH, expand=False)
 
-but = Button(root)
-but["text"] = "Печать"
-but.pack()
+number = 1
+while number <= 20:
+    button_name = "Problem. " + str(number)
+    button = Button(Button_Panel, text=button_name, background="#555", foreground="#ccc", padx="15", pady="6", font="12")
+    # style.configure(button, padding=6, relief="flat", background="#ccc")
+    button.pack(fill=BOTH, expand=False)
+    number += 1
 
+# scrollbar = Scrollbar(Button_Panel)
+# scrollbar.pack(side='top', fill=BOTH)
 
-var1 = IntVar()
-var2 = IntVar()
-check1 = Checkbutton(root, text=u'1 пункт', variable=var1, onvalue=1, offvalue=0)
-check2 = Checkbutton(root, text=u'2 пункт', variable=var2, onvalue=1, offvalue=0)
-check1.pack()
-check2.pack()
+# var1 = IntVar()
+# var2 = IntVar()
+# check1 = Checkbutton(root, text=u'1 пункт', variable=var1, onvalue=1, offvalue=0)
+# check2 = Checkbutton(root, text=u'2 пункт', variable=var2, onvalue=1, offvalue=0)
+# check1.pack(side=LEFT)
+# check2.pack(side=LEFT)
 
 root.mainloop()
